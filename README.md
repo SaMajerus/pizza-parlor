@@ -45,14 +45,22 @@ Please note: when a given Test is done, all of the testee-code is copied into Ch
 <details markdown=block>
 <summary markdown=span>TDD Test-Blocks (Business Logic)</summary>
 
+  Describe:  Pizza() <br>
+  Test 1:  "It should return a new 'Pizza' object with three properties for Size, Toppings and Price, respectively. Object is printed with 'console.log' to confirm.   ('To-be-calculated' is a placeholder for the number-value returned in the 'calculatedPrice' field.)" <br>
+    Code: <br>
+      let newPie = new Pizza("medium", ["pepperoni", "sausage"]);  //Sauce and cheese added by default, currently -- (emphasis on 'currently') <br>
+      console.log(newPie); <br>
+    Expected Output:  {size:  'medium',  toppings: ["pepperoni", "sausage"],  calculatedPrice: 'To-be-calculated'} <br><br>
 
-  Describe:  Pizza() 
-  Test 1:  "It should return a new 'Pizza' object with three properties for Size, Toppings and Price, respectively. Object is printed with 'console.log' to confirm.   ('To-be-calculated' is a placeholder for the number-value returned in the 'calculatedPrice' field.)" 
-    Code: 
-      let newPie = new Pizza("medium", ["pepperoni", "sausage"]);  //Sauce and cheese added by default, currently -- (emphasis on 'currently') 
+  Describe:  findPrice() <br>
+  Test 1:  "It should sum the price values of size, toppings, etc  and return the calculated price (as a String or a Double, either works)." <br> 
+    Code: <br> 
+      const type = "normal" 
+      const size = "M" 
+      const toppings = ["pepperoni", "sausage"]; 
+      console.log(findPrice(type, size, toppings));
       console.log(newPie); 
-    Expected Output:  {size:  'medium',  toppsArr: ["pepperoni", "sausage"],  calculatedPrice: 'To-be-calculated'} 
-
+    Expected Output:  '12.75' <br><br>
 </details> 
 
 
