@@ -50,17 +50,29 @@ Please note: when a given Test is done, all of the testee-code is copied into Ch
     Code: <br>
       let newPie = new Pizza("medium", ["pepperoni", "sausage"]);  //Sauce and cheese added by default, currently -- (emphasis on 'currently') <br>
       console.log(newPie); <br>
-    Expected Output:  {size:  'medium',  toppings: ["pepperoni", "sausage"],  calculatedPrice: 'To-be-calculated'} <br><br>
+    Expected Output:  {size:  'medium',  toppings: ["pepperoni", "sausage"],  calculatedPrice: 'To-be-calculated'} <br><br><br>
 
   Describe:  findPrice() <br>
   Test 1:  "It should sum the price values of size, toppings, etc  and return the calculated price (as a String or a Double, either works)." <br> 
     Code: <br> 
-      const type = "normal" 
-      const size = "M" 
-      const toppings = ["pepperoni", "sausage"]; 
-      console.log(findPrice(type, size, toppings));
-      console.log(newPie); 
+      const type = "normal"; <br> 
+      const size = "M"; <br> 
+      const toppings = ["pepperoni", "sausage"]; <br> 
+      console.log(findPrice(type, size, toppings)); <br> 
     Expected Output:  '12.75' <br><br>
+
+  Test 2:  "It should print the calculated price after passing through each calculation block (pizza type, size and toppings, respectively), and end with the total price." 
+    Code: <br> 
+      const type = "normal"; <br> 
+      const size = "L"; <br> 
+      const toppings = ["pepperoni", "italian sausage", "green peppers", "canadian bacon", "pineapple"]; <br> 
+      console.log(findPrice(type, size, toppings)); <br> 
+    Expected Output: <br>
+      'Price (after Type calc) =  7.50'  <br>
+      'Price (after Size calc) =  10.00'  <br>
+      'Price (after Toppings calc (5 toppings)) =  14.50'  <br>
+      '14.50' <br><br>
+
 </details> 
 
 

@@ -18,17 +18,19 @@ function findPrice(pieType, size, toppings) {
   } else {  //(pieType === "stuffed")
     price += 12.50; 
   } 
+  console.log("Price (after Type calc) =  " + String(price)); 
 
   //Pizza Size
-  if(size === "s") {
+  if(size === "S") {
     price += 1.00; 
-  } else if(size === "m") {
+  } else if(size === "M") {
     price += 1.50; 
-  } else if(size === "l") {
+  } else if(size === "L") {
     price += 2.50; 
-  } else {  //(size === "xl")
+  } else {  //(size === "XL")
     price += 3.50; 
   } 
+  console.log("Price (after Size calc) =  " + String(price)); 
 
   //Toppings
   let numAddit;  //Short for "number of additional toppings".   (If toppings.length > 2, then the result of  'toppings.length-2' is saved here.) 
@@ -36,9 +38,10 @@ function findPrice(pieType, size, toppings) {
     price += 1.50;  //This happens regardless of the next line's conditional being True or False. 
     if(toppings.length > 2){
       numAddit = (toppings.length-2); 
-      price += (0.75 * numAddit); 
-    }
+      price += (1.00 * numAddit); 
+    } 
   } 
+  console.log("Price (after Toppings calc (" + toppings.length + " toppings)) =  " + String(price)); 
 
   return String(price); 
 }
