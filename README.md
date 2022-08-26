@@ -73,6 +73,30 @@ Please note: when a given Test is done, all of the testee-code is copied into Ch
       'Price (after Toppings calc (5 toppings)) =  14.50'  <br>
       '14.50' <br><br> 
 
+  Describe:  generateReceipt() <br> 
+  Test 1:  "It should print out the String values (with newline escape-characters applied) that lists out the user's ordered options, then prints the total price (which contains a placeholder for this test)." <br> 
+    Code: <br> 
+      function generateReceipt(pizzaType, pizzaSize, tppgs, price) {
+        //Receipt is initialized with the 'type' and 'size' parts. (Toppings and price will follow). 
+        let receipt = "Type: "+ pizzaType + "\nSize: " + pizzaSize;  //[Assuming this is the case in JS also,] '\n' is an escape character for 'newline'. 
+        receipt = receipt + "\nToppings: " + String(tppgs) + "\n\n" + "Price:  $" + price;
+        return receipt; 
+      }
+
+      const type = "stuffed"; 
+      const size = "XL"; 
+      const toppings = ["pepperoni", "italian sausage", "pineapple"]; 
+      const price = "xx.xx"; 
+      console.log(generateReceipt(type, size, toppings, price)); 
+    Expected Output:  
+      "Type: stuffed
+      Size: XL 
+      Toppings: pepperoni, italian sausage, pineapple 
+
+      Price: $xx.xx" 
+
+  Test 2: 
+
 </details> 
 
 
