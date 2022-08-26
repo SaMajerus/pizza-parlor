@@ -3,11 +3,11 @@ function Pizza(pType, pSize, topps) {   //Parameter data types (in order):   Str
   this.pizzaType = pType; 
   this.size = pSize; 
   this.toppings = topps; 
-  this.price = this.findPrice(pSize, toppings); 
+  this.price = this.findPrice(pType, pSize, topps); 
 } 
 
 /*Pizza.prototype.findPrice = function(pieType, size, toppings) {*/ 
-function findPrice(pieType, size, toppings) {
+Pizza.prototype.findPrice = function(pieType, size, toppings) {
   let price = 0.00; 
 
   //Pizza Type  
@@ -32,7 +32,7 @@ function findPrice(pieType, size, toppings) {
   } 
   console.log("Price (after Size calc) =  " + String(price)); 
 
-  //Toppings
+  //Toppings 
   let numAddit;  //Short for "number of additional toppings".   (If toppings.length > 2, then the result of  'toppings.length-2' is saved here.) 
   if(toppings.length >= 2) { 
     price += 1.50;  //This happens regardless of the next line's conditional being True or False. 
@@ -46,14 +46,12 @@ function findPrice(pieType, size, toppings) {
   return String(price); 
 } 
 
-/*Pizza.prototype.generateReceipt = function() { */
-function generateReceipt(pizzaType, pizzaSize, tppgs, price) {
+Pizza.prototype.generateReceipt = function() { 
   //Receipt is initialized with the 'type' and 'size' parts. (Toppings and price will follow).
-  /* let receipt = "Type: "+ this.pizzaType + "\n Size: " + this.pizzasize;    // [Assuming this is the case in JS also,] '\n' is an escape character for 'newline'. */
-  let receipt = "Type: "+ pizzaType + "\n Size: " + pizzaSize;
-  receipt = receipt + "\nToppings: " + String(tppgs) + "\n\n" + "Price:  $" + price;
+  let receipt = "Type: "+ this.pizzaType + "\n Size: " + this.size;   //'\n' is an escape character for 'newline'.
+  receipt = receipt + "\nToppings: " + String(this.toppings) + "\n\n" + "Price:  $" + this.price;
   return receipt; 
-}
+} 
 
 /*   UI Logic   */ 
 function handleOrder(event){ 
