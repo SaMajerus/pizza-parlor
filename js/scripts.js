@@ -31,16 +31,13 @@ function findPrice(pieType, size, toppings) {
   } 
 
   //Toppings
+  let numAddit;  //Short for "number of additional toppings".   (If toppings.length > 2, then the result of  'toppings.length-2' is saved here.) 
   if(toppings.length >= 2) { 
-    if(toppings.length === 3){
-      price += 2.25; 
-    } else if(toppings.length === 4) {
-      price += 3.00; 
-    } else {  //(toppings.length === 5)
-      price += 3.75; 
-    } 
-  } else {  //(toppings.length === 2) 
-    price += 1.50; 
+    price += 1.50;  //This happens regardless of the next line's conditional being True or False. 
+    if(toppings.length > 2){
+      numAddit = (toppings.length-2); 
+      price += (0.75 * numAddit); 
+    }
   } 
 
   return String(price); 
