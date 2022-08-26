@@ -36,7 +36,7 @@ function findPrice(pieType, size, toppings) {
   let numAddit;  //Short for "number of additional toppings".   (If toppings.length > 2, then the result of  'toppings.length-2' is saved here.) 
   if(toppings.length >= 2) { 
     price += 1.50;  //This happens regardless of the next line's conditional being True or False. 
-    if(toppings.length > 2){
+    if(toppings.length > 2){ 
       numAddit = (toppings.length-2); 
       price += (1.00 * numAddit); 
     } 
@@ -44,8 +44,8 @@ function findPrice(pieType, size, toppings) {
   console.log("Price (after Toppings calc (" + toppings.length + " toppings)) =  " + String(price)); 
 
   return String(price); 
-}
+} 
 
 /*   UI Logic   */ 
-//Code starts here
+//Code starts here 
 

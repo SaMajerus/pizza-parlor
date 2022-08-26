@@ -71,7 +71,7 @@ Please note: when a given Test is done, all of the testee-code is copied into Ch
       'Price (after Type calc) =  7.50'  <br>
       'Price (after Size calc) =  10.00'  <br>
       'Price (after Toppings calc (5 toppings)) =  14.50'  <br>
-      '14.50' <br><br>
+      '14.50' <br><br> 
 
 </details> 
 
