@@ -27,19 +27,44 @@ Other notes:
 * For those wondering how to implement dropdowns/spoilers (like below) in Markdown,  I Googled 'details tag markdown' and found this website:  https://spinningnumbers.org/a/details.html#details-markdown-template .   (Yes, I used that template for the dropdown in this document)
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 ## Tests
+Please note: when a given Test is done, all of the testee-code is copied into Chrome's DevTools Console first  (and submitted with the ENTER key),   <em>before</em> the test code gets input and run.  
 
 <details markdown=block>
 <summary markdown=span>TDD Test-Blocks (Business Logic)</summary>
 
+
   Describe:  Pizza() 
-  Test 1:  "It must construct a new 'Pizza' object with all fields initialized. (The object gets printed with 'console.log' to confirm this.)" 
+  Test 1:  "It must construct a new 'Pizza' object with all fields initialized. Object is printed with 'console.log' to confirm.   ('To-be-calculated' is a placeholder for the number-value returned in the 'calculatedPrice' field.)" 
     Code: 
-      let newPie = new Pizza(); 
-      console.log(newPie);
-    Expected Output:  "{Size: , (toppings-array): , calculatedPrice: }" 
+      let newPie = new Pizza("medium", ["pepperoni", "sausage"]);  //Sauce and cheese added by default, currently -- (emphasis on 'currently') 
+      console.log(newPie); 
+    Expected Output:  {size:  'medium',  toppsArr: ["pepperoni", "sausage"],  calculatedPrice: 'To-be-calculated'} 
 
 </details> 
+
+
+
+
+
+
+
+
+
+
+
 
 
 ## Setup/Installation Requirements
