@@ -32,11 +32,12 @@ Other notes:
 <details markdown=block>
 <summary markdown=span>TDD Test-Blocks (Business Logic)</summary>
 
-  Describe:  _functionName_() 
-  Test 1:  (Write goal of Test here)
+  Describe:  Pizza() 
+  Test 1:  "It must construct a new 'Pizza' object with all fields initialized. (The object gets printed with 'console.log' to confirm this.)" 
     Code: 
-      (insert code for the Test here)
-    Expected Output:  
+      let newPie = new Pizza(); 
+      console.log(newPie);
+    Expected Output:  "{Size: , (toppings-array): , calculatedPrice: }" 
 
 </details> 
 
