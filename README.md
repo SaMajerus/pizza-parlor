@@ -47,7 +47,7 @@ Please note: when a given Test is done, all of the testee-code is copied into Ch
 
 
   Describe:  Pizza() 
-  Test 1:  "It must construct a new 'Pizza' object with all fields initialized. Object is printed with 'console.log' to confirm.   ('To-be-calculated' is a placeholder for the number-value returned in the 'calculatedPrice' field.)" 
+  Test 1:  "It should return a new 'Pizza' object with three properties for Size, Toppings and Price, respectively. Object is printed with 'console.log' to confirm.   ('To-be-calculated' is a placeholder for the number-value returned in the 'calculatedPrice' field.)" 
     Code: 
       let newPie = new Pizza("medium", ["pepperoni", "sausage"]);  //Sauce and cheese added by default, currently -- (emphasis on 'currently') 
       console.log(newPie); 
