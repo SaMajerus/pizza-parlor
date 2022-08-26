@@ -1,11 +1,8 @@
 # Pizza Parlor
 
-
 #### By Samuel Majerus 
 
-
-####  _{Brief description of application}_
-
+####  A webpage that allows one to make a simulated pizza order, and get a receipt with their order and the total price in return. 
 
 ## Technologies Used
 
@@ -19,24 +16,14 @@
 
 
 ## Description
+The user can select Pizza Type, Pizza Size, and whatever toppings they want (minimum of 2), then click the Order button. A summary of their order, followed by a price, will be printed in a Receipt section immediately below that. 
+When I say a minimum of 2 toppings, I really do mean that. The UI Logic that handles user submissions filters out any Blank select-box inputs before creating the a new Pizza object. So, if the user selects toppings for the first 2 boxes but leaves the other 3 blank, the receipt only shows those two toppings in the order. 
 
-(Write full description here)
+This application is the Minimum Viable Product (MVP) iteration -- I plan to finish it out with more ordering options (like those included in the Menu text but not the input fields).  The input type will be changed to checkboxes for the Toppings as well, which will also save the space taken up by 5 select-boxes and their labels. 
 
 Other notes: 
 * This program's Business Logic was built up using Test-Driven Development (TDD). To see the tests I used, look no further than the next section. 
-* For those wondering how to implement dropdowns/spoilers (like below) in Markdown,  I Googled 'details tag markdown' and found this website:  https://spinningnumbers.org/a/details.html#details-markdown-template .   (Yes, I used that template for the dropdown in this document)
-
-
-
-
-
-
-
-
-
-
-
-
+* For those wondering how to implement dropdowns/spoilers (like below) in Markdown,  I Googled 'details tag markdown' and found this website:  https://spinningnumbers.org/a/details.html#details-markdown-template .   (Yes, I used that template for the dropdown in this document) <br> 
 
 
 ## Tests
@@ -59,9 +46,9 @@ Please note: when a given Test is done, all of the testee-code is copied into Ch
       const size = "M"; <br> 
       const toppings = ["pepperoni", "sausage"]; <br> 
       console.log(findPrice(type, size, toppings)); <br> 
-    Expected Output:  '12.75' <br><br>
+    Expected Output:  '12.75' <br><br> 
 
-  Test 2:  "It should print the calculated price after passing through each calculation block (pizza type, size and toppings, respectively), and end with the total price." 
+  Test 2:  "It should print the calculated price after passing through each calculation block (pizza type, size and toppings, respectively), and end with the total price." <br> 
     Code: <br> 
       const type = "normal"; <br> 
       const size = "L"; <br> 
@@ -71,44 +58,29 @@ Please note: when a given Test is done, all of the testee-code is copied into Ch
       'Price (after Type calc) =  7.50'  <br>
       'Price (after Size calc) =  10.00'  <br>
       'Price (after Toppings calc (5 toppings)) =  14.50'  <br>
-      '14.50' <br><br> 
+      '14.50' <br><br><br> 
 
   Describe:  generateReceipt() <br> 
   Test 1:  "It should print out the String values (with newline escape-characters applied) that lists out the user's ordered options, then prints the total price (which contains a placeholder for this test)." <br> 
     Code: <br> 
-      function generateReceipt(pizzaType, pizzaSize, tppgs, price) {
-        //Receipt is initialized with the 'type' and 'size' parts. (Toppings and price will follow). 
-        let receipt = "Type: "+ pizzaType + "\nSize: " + pizzaSize;  //[Assuming this is the case in JS also,] '\n' is an escape character for 'newline'. 
-        receipt = receipt + "\nToppings: " + String(tppgs) + "\n\n" + "Price:  $" + price;
-        return receipt; 
-      }
-
-      const type = "stuffed"; 
-      const size = "XL"; 
-      const toppings = ["pepperoni", "italian sausage", "pineapple"]; 
-      const price = "xx.xx"; 
-      console.log(generateReceipt(type, size, toppings, price)); 
-    Expected Output:  
-      "Type: stuffed
-      Size: XL 
-      Toppings: pepperoni, italian sausage, pineapple 
-
+      function generateReceipt(pizzaType, pizzaSize, tppgs, price) { <br> 
+        //Receipt is initialized with the 'type' and 'size' parts. (Toppings and price will follow). <br> 
+        let receipt = "Type: "+ pizzaType + "\nSize: " + pizzaSize;  //[Assuming this is the case in JS also,] '\n' is an escape character for 'newline'. <br> 
+        receipt = receipt + "\nToppings: " + String(tppgs) + "\n\n" + "Price:  $" + price; <br> 
+        return receipt; <br> 
+      } <br> 
+      const type = "stuffed"; <br>
+      const size = "XL"; <br> 
+      const toppings = ["pepperoni", "italian sausage", "pineapple"]; <br> 
+      const price = "xx.xx"; <br> 
+      console.log(generateReceipt(type, size, toppings, price)); <br> 
+    Expected Output:  <br> 
+      "Type: stuffed <br> 
+      Size: XL <br> 
+      Toppings: pepperoni, italian sausage, pineapple <br><br> 
       Price: $xx.xx" 
 
-  Test 2: 
-
-</details> 
-
-
-
-
-
-
-
-
-
-
-
+</details> <br> 
 
 
 ## Setup/Installation Requirements
@@ -130,11 +102,12 @@ Please note: when a given Test is done, all of the testee-code is copied into Ch
   * 4.)  To open the webpage, double-click the file named  "pizza.html". The webpage will then be opened in a new browser tab.  Everything else after that should be self-explanatory. 
 * IMPORTANT:  the webpage's interactive features will not work if the files' containing folder doesn't look something like this  (names with a '/' are folders):  
 'css/'     'js/'     'pizza.html'     'README.md'
+<br> 
 
 
 ## Known Bugs
 
-* N/A 
+* It's not a bug per-se, but currently the User has to scroll down a bit after clicking the 'Order' button to find the receipt.  
 
 
 ## License
