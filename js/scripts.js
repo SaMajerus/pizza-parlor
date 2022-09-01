@@ -17,8 +17,7 @@ Pizza.prototype.findPrice = function(pieType, size, toppings) {
     price += 10.00; 
   } else {  //(pieType === "stuffed")
     price += 12.50; 
-  } 
-  console.log("Price (after Type calc) =  " + String(price)); 
+  }  
 
   //Pizza Size
   if(size === "S") {
@@ -29,8 +28,7 @@ Pizza.prototype.findPrice = function(pieType, size, toppings) {
     price += 2.50; 
   } else {  //(size === "XL")
     price += 3.50; 
-  } 
-  console.log("Price (after Size calc) =  " + String(price)); 
+  }  
 
   //Toppings 
   let numAddit;  //Short for "number of additional toppings".   (If toppings.length > 2, then the result of  'toppings.length-2' is saved here.) 
@@ -40,8 +38,7 @@ Pizza.prototype.findPrice = function(pieType, size, toppings) {
       numAddit = (toppings.length-2); 
       price += (1.00 * numAddit); 
     } 
-  } 
-  console.log("Price (after Toppings calc (" + toppings.length + " toppings)) =  " + String(price)); 
+  }  
 
   return String(price); 
 } 
@@ -66,18 +63,15 @@ function handleOrder(event){
   const topp5 = document.getElementById("topping-5").value;  
 
   let allToppFields = [topp1, topp2, topp3, topp4, topp5];  //This saves Entered -- as well as Default (blank-selection) -- inputs.
-  let toppsArr = [];  //This saves the User's inputs regarding what toppings to put on the Pizza. 
-  console.log("'allToppFields' array (before filtering User entries into 'toppsArr'):  " + allToppFields); 
+  let toppsArr = [];  //This saves the User's inputs regarding what toppings to put on the Pizza.  
 
   allToppFields.forEach( function(entry) {   //Filters user entries from still-blank input fields. 
     if(!(entry === "default")) {  //Pushes given entry to toppings array  ('toppsArr'). 
       toppsArr.push(entry); 
     }
   }); 
-  console.log("'toppsArr' after filtering:  " + toppsArr); 
 
-  let newPie = new Pizza(pieType, pieSize, toppsArr);
-  console.log(newPie); 
+  let newPie = new Pizza(pieType, pieSize, toppsArr); 
   let orderSumm = newPie.generateReceipt();  //Stores 'receipt' String. 
   
   //Displaying receipt on webpage for user 
