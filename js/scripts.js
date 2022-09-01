@@ -6,7 +6,6 @@ function Pizza(pType, pSize, topps) {   //Parameter data types (in order):   Str
   this.price = this.findPrice(pType, pSize, topps); 
 } 
 
-/*Pizza.prototype.findPrice = function(pieType, size, toppings) {*/ 
 Pizza.prototype.findPrice = function(pieType, size, toppings) {
   let price = 0.00; 
 
@@ -17,7 +16,7 @@ Pizza.prototype.findPrice = function(pieType, size, toppings) {
     price += 10.00; 
   } else {  //(pieType === "stuffed")
     price += 12.50; 
-  }  
+  } 
 
   //Pizza Size
   if(size === "S") {
@@ -28,15 +27,13 @@ Pizza.prototype.findPrice = function(pieType, size, toppings) {
     price += 2.50; 
   } else {  //(size === "XL")
     price += 3.50; 
-  }  
+  } 
 
-  //Toppings 
-  let numAddit;  //Short for "number of additional toppings".   (If toppings.length > 2, then the result of  'toppings.length-2' is saved here.) 
+  //Toppings  
   if(toppings.length >= 2) { 
     price += 1.50;  //This happens regardless of the next line's conditional being True or False. 
     if(toppings.length > 2){ 
-      numAddit = (toppings.length-2); 
-      price += (1.00 * numAddit); 
+      price += (1.00 * (toppings.length-2)); 
     } 
   }  
 
@@ -71,7 +68,8 @@ function handleOrder(event){
     }
   }); 
 
-  let newPie = new Pizza(pieType, pieSize, toppsArr); 
+  let newPie = new Pizza(pieType, pieSize, toppsArr);
+   
   let orderSumm = newPie.generateReceipt();  //Stores 'receipt' String. 
   
   //Displaying receipt on webpage for user 
